@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Executive Silence Audit | The Story Desk</title>
+<meta name="description" content="A two-minute honest look at whether the outside world knows what you already know. Six questions, no email needed to see your score.">
+<meta property="og:title" content="The Executive Silence Audit | The Story Desk">
+<meta property="og:description" content="A two-minute honest look at whether the outside world knows what you already know. Six questions, no email needed to see your score.">
+<meta name="theme-color" content="#1A1814">
+<style>
+:root{--gold:#C9A961;--gold-dark:#B0904A;--ink:#1A1814;--gray:#5C5750;--light:#9E9892;--off:#F5F4F2;--mist:#E8E6E1;--stone:#D8D4CF;--tint:#F3ECD9;--white:#fff;--ok:#5B7A52;--crit:#9E4A3C;
+--display:Georgia,"Times New Roman",Times,serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--gray);font-family:var(--sans);font-size:17px;line-height:1.7}
+a{color:var(--ink)}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--gold-dark);outline-offset:2px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone)}
+.top-in{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 28px}
+.mark{display:flex;align-items:baseline;line-height:1;text-decoration:none}
+.mark .the{font:500 8px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-right:4px;transform:translateY(-3px)}
+.mark .story{font:italic 400 24px var(--display);color:var(--gold-dark)}
+.mark .desk{font:700 24px var(--display);color:var(--ink)}
+.back{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--gray);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.back:hover{color:var(--ink);border-bottom-color:var(--gold)}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.wide{max-width:1000px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 14px}
+h1{font:400 clamp(34px,5vw,54px)/1.12 var(--display);letter-spacing:-.01em;color:var(--ink);margin:0 0 18px;text-wrap:balance}
+h1 em,h2 em{font-style:italic;color:var(--gold-dark)}
+h2{font:400 clamp(26px,3.2vw,34px)/1.25 var(--display);color:var(--ink);margin:0 0 14px;text-wrap:balance}
+h3{font:700 20px/1.3 var(--display);color:var(--ink);margin:0 0 8px}
+p{margin:0 0 16px;text-wrap:pretty}
+.lede{font-size:19px;line-height:1.7}
+.hero{padding:72px 0 40px}
+.rule{width:120px;height:1px;background:var(--gold);margin:0 0 28px}
+.card{background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:32px}
+.panel{background:var(--off);border:1px solid var(--stone);border-radius:6px;padding:28px}
+.tint{background:var(--tint);border:1px solid var(--gold);border-radius:6px;padding:22px 26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 28px;font:700 14px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);border-radius:4px;background:var(--ink);color:#fff;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s}
+.btn:hover{background:#000}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.btn.sec{background:transparent;color:var(--ink);border-color:var(--stone)}
+.btn.sec:hover{border-color:var(--ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.progress{display:flex;gap:6px;margin:0 0 26px}
+.progress i{flex:1;height:4px;background:var(--mist);border-radius:2px}
+.progress i.on{background:var(--gold)}
+.qcount{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--light);margin:0 0 10px}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0;font:400 clamp(22px,2.8vw,28px)/1.3 var(--display);color:var(--ink);margin-bottom:10px}
+.help{font-size:15px;color:var(--gray);margin:0 0 22px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.choices.three{grid-template-columns:repeat(3,1fr);gap:10px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:64px;padding:14px 16px;border:1px solid var(--stone);border-radius:6px;background:var(--white);font:700 15px/1.35 var(--sans);color:var(--ink);transition:border-color .2s,background .2s}
+.choice:hover span{border-color:var(--gold)}
+.choice input:checked+span{border-color:var(--gold-dark);background:var(--tint);box-shadow:inset 0 0 0 1px var(--gold-dark)}
+.choice input:focus-visible+span{outline:3px solid var(--gold-dark);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+label.f{display:block;font:700 13px var(--sans);letter-spacing:.04em;color:var(--ink);margin:0 0 6px}
+input[type=text],input[type=email],select,textarea{width:100%;font:16px/1.5 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--stone);border-radius:4px;padding:12px 14px;min-height:48px}
+textarea{min-height:150px;resize:vertical;line-height:1.6}
+input:focus,select:focus,textarea:focus{border-color:var(--gold-dark);outline:3px solid rgba(201,169,97,.35)}
+.field{margin-bottom:16px}
+.fine{font-size:14px;color:var(--gray);margin:10px 0 0}
+.err{color:var(--crit);font-size:14px;margin:8px 0 0;min-height:1em}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.score{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.ring{width:132px;height:132px;border-radius:50%;border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ink);color:#fff;flex:0 0 auto}
+.ring b{font:400 54px/1 var(--display);color:#fff}
+.ring small{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.band{font:italic 400 clamp(28px,4vw,40px)/1.15 var(--display);color:var(--gold-dark);margin:0}
+.gap{border-top:1px solid var(--stone);padding:14px 0;display:flex;gap:16px}
+.gap:last-child{border-bottom:1px solid var(--stone)}
+.gap .n{flex:0 0 28px;font:italic 400 24px/1 var(--display);color:var(--gold-dark)}
+.stack>*+*{margin-top:26px}
+.sticky-score{position:sticky;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--stone);padding:12px 0;z-index:5}
+.sticky-score .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.sticky-score .btn{min-height:44px;padding:10px 22px}
+.tog{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1px solid var(--stone);border-radius:6px;background:var(--off);margin-bottom:26px}
+.tog input{width:22px;height:22px;margin-top:3px;accent-color:#B0904A;flex:0 0 auto}
+.q{padding:22px 0;border-top:1px solid var(--stone);scroll-margin:90px 0 110px}
+.quad,.chk{scroll-margin:90px 0 110px}
+.q:first-of-type{border-top:1px solid var(--gold)}
+.q h3{font-size:19px}
+.q .n{font:italic 400 22px var(--display);color:var(--gold-dark);margin-right:8px}
+.chk{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1px solid var(--stone);border-radius:6px;background:#fff;margin-bottom:10px;cursor:pointer}
+.chk:hover{border-color:var(--gold)}
+.chk input{width:22px;height:22px;margin-top:3px;accent-color:#B0904A;flex:0 0 auto}
+.quad{border:1px solid var(--stone);border-radius:6px;padding:24px 26px;margin-bottom:22px;background:var(--off)}
+.quad h3 .n{font:italic 400 28px var(--display);color:var(--gold-dark);margin-right:10px}
+.quad .sub{font-size:14px;color:var(--gray);margin:0 0 14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer.bot{background:var(--ink);margin-top:96px;padding:40px 0;color:var(--light);font-size:13px}
+footer.bot a{color:var(--light)}
+.hidden{display:none!important}
+.wc{font-size:13px;color:var(--gray);margin-top:6px;display:flex;justify-content:space-between;gap:10px}
+.wc .ok{color:var(--ok);font-weight:700}
+.wc .warn{color:var(--crit);font-weight:700}
+.stepper{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.stepper li{flex:1 1 90px}
+.stepper button{width:100%;min-height:44px;background:#fff;border:1px solid var(--stone);border-radius:4px;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gray);cursor:pointer;padding:8px 6px}
+.stepper button[aria-current=step]{border-color:var(--gold-dark);background:var(--tint);color:var(--ink)}
+.stepper button.done{border-color:var(--ok);color:var(--ok)}
+#printArea{display:none}
+@media (max-width:640px){
+ .top-in{padding:12px 18px}
+ .hero{padding:44px 0 24px}
+ .card{padding:22px 18px}
+ .choices{grid-template-columns:1fr}
+ .choices.three{grid-template-columns:1fr}
+ .btn{width:100%}
+ .nav .btn{width:auto;flex:1}
+ .ring{width:112px;height:112px}.ring b{font-size:44px}
+}
+@media print{
+ body{background:#fff;color:#000;font-size:12pt}
+ body>*:not(#printArea){display:none!important}
+ #printArea{display:block!important}
+ @page{margin:.7in}
+ .pr-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5pt solid #C9A961;padding-bottom:8pt;margin-bottom:14pt}
+ .pr-head .m{font:italic 400 18pt Georgia,serif;color:#8a6f2e}
+ .pr-head .m b{font:700 18pt Georgia,serif;color:#1A1814;font-style:normal}
+ .pr-head .t{font:700 8pt Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#5C5750}
+ #printArea h1{font:400 22pt Georgia,serif;margin:0 0 6pt}
+ #printArea h2{font:700 13pt Georgia,serif;margin:14pt 0 4pt;color:#1A1814}
+ #printArea p,#printArea li{font:11pt/1.5 Georgia,serif;color:#1A1814;margin:0 0 6pt}
+ #printArea .box{display:inline-block;width:10pt;height:10pt;border:1pt solid #1A1814;margin-right:6pt;vertical-align:-1pt;text-align:center;line-height:9pt;font-size:9pt}
+ #printArea .pb{page-break-before:always}
+ #printArea .foot{margin-top:18pt;border-top:.5pt solid #ccc;padding-top:8pt;font:8.5pt Arial,sans-serif;color:#5C5750}
+ #printArea .draft p{white-space:pre-wrap}
+}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="top-in">
+  <a class="mark" href="index.html" aria-label="The Story Desk home"><span class="the">The</span><span class="story">Story</span><span class="desk">Desk</span></a>
+  <a class="back" href="index.html#founders">&larr; Back to Founders & CEOs</a>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+ <section class="hero" id="intro">
+  <p class="eyebrow">Free Tool for Founders &amp; Executives</p>
+  <div class="rule"></div>
+  <h1>The Executive <em>Silence</em> Audit</h1>
+  <p class="lede">A two-minute honest look at whether the outside world knows what you already know.</p>
+  <p>Visibility isn&rsquo;t automatic. The executives winning trust, deals, and talent right now are the ones whose thinking is findable. Six questions will show where you stand.</p>
+  <div class="row"><button class="btn gold" id="start" type="button">Begin the Audit</button><span class="fine" style="margin:0">Six questions. No email needed to see your score.</span></div>
+ </section>
+
+ <section class="hidden" id="quiz" aria-live="polite"></section>
+
+ <section class="hidden" id="gate" style="padding-bottom:20px"></section>
+
+ <section class="hidden" id="results"></section>
+</div>
+
+</main>
+<footer class="bot"><div class="wrap wide" style="display:flex;flex-wrap:wrap;gap:8px 14px">
+  <span>thestory-desk.com</span><span>|</span><span>Clare Venegas</span><span>|</span><a href="mailto:hello@clarevenegas.com">hello@clarevenegas.com</a><span>|</span><span>&copy; 2026 The Story Desk, LLC</span>
+</div></footer>
+<div id="printArea" aria-hidden="true"></div>
+<script>
+
+var BOOKING = 'https://calendar.app.google/uDw4tAbS9pRey6J37';
+var ML_ACCOUNT = '2497680';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem('tsd_'+k);return r?JSON.parse(r):null}localStorage.setItem('tsd_'+k,JSON.stringify(v))}catch(e){return null}}
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)}
+function mlSubscribe(formId, fields){
+  var fd=new FormData();
+  Object.keys(fields).forEach(function(k){var v=fields[k]; if(v!==undefined&&v!==null&&v!=='') fd.append('fields['+k+']',v)});
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  return fetch('https://assets.mailerlite.com/jsonp/'+ML_ACCOUNT+'/forms/'+formId+'/subscribe',{method:'POST',body:fd,mode:'no-cors'}).then(function(){return true}).catch(function(){return false});
+}
+function gateHTML(opts){
+  // opts: id, button, consent, showType
+  var sel = opts.showType ? '<div class="field"><label class="f" for="'+opts.id+'-type">I lead a...</label><select id="'+opts.id+'-type"><option value="">Choose one (optional)</option><option value="Company or startup">Company or startup</option><option value="College or university">College or university</option><option value="Nonprofit, parish, or ministry">Nonprofit, parish, or ministry</option><option value="Other">Other</option></select></div>' : '';
+  return '<form id="'+opts.id+'" novalidate autocomplete="on">'
+   +'<div class="field"><label class="f" for="'+opts.id+'-name">First name</label><input type="text" id="'+opts.id+'-name" name="name" autocomplete="given-name" required></div>'
+   +'<div class="field"><label class="f" for="'+opts.id+'-email">Email</label><input type="email" id="'+opts.id+'-email" name="email" autocomplete="email" inputmode="email" required></div>'
+   + sel
+   +'<div class="hp" aria-hidden="true"><label>Website<input type="text" id="'+opts.id+'-hp" tabindex="-1" autocomplete="off"></label></div>'
+   +'<button class="btn gold" type="submit" id="'+opts.id+'-btn">'+opts.button+'</button>'
+   +'<p class="err" id="'+opts.id+'-err" role="alert"></p>'
+   +'<p class="fine">'+opts.consent+'</p></form>';
+}
+function wireGate(id, formId, extra, done){
+  var f=$('#'+id); if(!f) return;
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=$('#'+id+'-name').value.trim(), email=$('#'+id+'-email').value.trim(), err=$('#'+id+'-err');
+    if($('#'+id+'-hp').value){return}
+    if(!name){err.textContent='Please add your first name.';$('#'+id+'-name').focus();return}
+    if(!validEmail(email)){err.textContent='That email looks like it’s missing something. Please check it.';$('#'+id+'-email').focus();return}
+    err.textContent='';
+    var btn=$('#'+id+'-btn'); btn.disabled=true; var old=btn.textContent; btn.textContent='One moment…';
+    var t=$('#'+id+'-type'); var data=extra(); data.name=name; data.email=email; if(t&&t.value) data.organization_type=t.value;
+    store('lead',{name:name,email:email});
+    mlSubscribe(formId,data).then(function(){ done(name,email,t&&t.value); });
+  });
+  var saved=store('lead'); if(saved){ if(saved.name) $('#'+id+'-name').value=saved.name; if(saved.email) $('#'+id+'-email').value=saved.email; }
+}
+function shell(){
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){} });
+}
+
+var FORM_ID='200063419798258870';
+
+var QS=[
+ {q:'Would a Google search surface your industry perspective, beyond just your title and company bio?',h:'Search your own name plus your industry. Answer based on what you actually see.',a:['No / rarely','Yes / consistently'],v:1,
+  gap:'When someone searches your name, they find your title and your company bio, not your thinking.'},
+ {q:'Have you published or been quoted substantively in the last 90 days?',h:'Count bylines, quotes, podcasts, and talks. Internal memos don’t count.',a:['No / rarely','Yes / consistently'],v:1,
+  gap:'You haven’t been quoted or published in the last 90 days. Trust fades faster than it builds.'},
+ {q:'Could a competitor’s name replace yours in your last public statement without anyone noticing?',h:'Read your last public statement. Would a competitor’s name fit in the same sentence?',a:['No — it was distinctly mine','Yes — it could’ve been anyone'],v:0,
+  gap:'Your last public statement could have come from anyone. A statement that could carry a competitor’s name earns no credit.'},
+ {q:'Do media outlets and conferences approach you, or are you always the one asking?',h:'Think of the last three times you were quoted or invited. Who started the conversation?',a:['I’m always asking','They come to me'],v:1,
+  gap:'You’re always the one asking. Invitations come to leaders whose ideas are already visible.'},
+ {q:'Has a strong opinion from a leadership meeting ever been shared publicly?',h:'Think of the sharpest opinion you gave in your last leadership meeting.',a:['No / rarely','Yes / consistently'],v:1,
+  gap:'Your best thinking stays in the conference room. Your team hears it; the public doesn’t.'},
+ {q:'Would your reputation survive if you left your current role?',h:'If your role ended tomorrow, what public record would still carry your name?',a:['Lives in the org chart','Survives on my own name'],v:1,
+  gap:'Your reputation lives in the org chart, not in your own name.'}
+];
+var BANDS=[
+ {max:2,name:'Mostly Silent',body:'Right now, the outside world knows your title better than your thinking. That is common, and it is fixable. Most leaders in this range have strong opinions and no system for getting them out.',move:'Write one piece. Use the 5-Minute Op-Ed Framework to get your opinion on paper in an afternoon.',alt:'If you’d rather not do it alone, the First Op-Ed in 14 Days takes your idea and returns a finished piece in your voice.',p:{t:'Try the Op-Ed Framework',h:'oped-framework.html'}},
+ {max:4,name:'Partly Visible',body:'People who look you up will find something, though not always what you would want them to find first. You have momentum. What’s missing is consistency and a point of view that is unmistakably yours.',move:'Pick one gap and fix it in the next 30 days. Most leaders in this band see the fastest return from a single, well-placed byline.',alt:'',p:{t:'Try the Op-Ed Framework',h:'oped-framework.html'}},
+ {max:6,name:'Visible',body:'You are doing what most executives do not. The question now is whether your visibility is working as hard as it can, and whether it will hold when your calendar gets crowded.',move:'Turn what’s working into a standing system: a calendar, a voice guide, and someone who drafts while you decide.',alt:'',p:{t:'Learn About the Fractional CMCO',h:'index.html#founders'}}
+];
+var answers=store('audit_answers')||[]; var cur=0, score=0, band=null, unlocked=false;
+function bandFor(s){for(var i=0;i<BANDS.length;i++){if(s<=BANDS[i].max) return BANDS[i]}return BANDS[2]}
+function calc(){score=0;answers.forEach(function(a,i){if(a===QS[i].v) score++});band=bandFor(score)}
+function renderQ(){
+  var q=QS[cur], bars='';
+  for(var i=0;i<6;i++) bars+='<i class="'+(i<=cur?'on':'')+'"></i>';
+  var cs=q.a.map(function(t,i){var id='a'+i; return '<label class="choice"><input type="radio" name="ans" value="'+i+'" id="'+id+'"'+(answers[cur]===i?' checked':'')+'><span>'+esc(t)+'</span></label>'}).join('');
+  $('#quiz').innerHTML='<div class="card"><div class="progress" aria-hidden="true">'+bars+'</div>'
+   +'<p class="qcount">Question '+(cur+1)+' of 6</p>'
+   +'<fieldset><legend>'+esc(q.q)+'</legend><p class="help">'+esc(q.h)+'</p><div class="choices">'+cs+'</div></fieldset>'
+   +'<div class="nav"><button class="btn sec" type="button" id="back"'+(cur===0?' style="visibility:hidden"':'')+'>Back</button><button class="btn" type="button" id="next" disabled>'+(cur===5?'See My Score':'Next')+'</button></div></div>';
+  var nx=$('#next'); if(answers[cur]!==undefined) nx.disabled=false;
+  $$('input[name=ans]').forEach(function(r){r.addEventListener('change',function(){answers[cur]=parseInt(r.value,10);store('audit_answers',answers);nx.disabled=false;
+    setTimeout(function(){ if(cur<5){} },0)})});
+  nx.addEventListener('click',function(){ if(cur<5){cur++;renderQ();$('#quiz').scrollIntoView({behavior:'smooth',block:'start'});$('#quiz legend').setAttribute('tabindex','-1');$('#quiz legend').focus({preventScroll:true})} else {showScore()} });
+  $('#back').addEventListener('click',function(){ if(cur>0){cur--;renderQ()} });
+}
+function showScore(){
+  calc(); $('#quiz').classList.add('hidden');
+  var g=$('#gate'); g.classList.remove('hidden');
+  g.innerHTML='<div class="card stack"><div class="score"><div class="ring" role="img" aria-label="Your score: '+score+' of 6"><b>'+score+'</b><small>of 6</small></div><div><p class="eyebrow" style="margin-bottom:6px">Your score</p><p class="band">'+band.name+'</p></div></div>'
+   +'<div><h2>See what your score means.</h2><p>Enter your email to see your biggest gaps and your first move. I\u2019ll also send occasional notes on executive visibility and writing.</p>'
+   +gateHTML({id:'g',button:'Send Me My Results',consent:'No spam. Occasional notes on executive visibility and writing — unsubscribe anytime.',showType:true})+'</div></div>';
+  g.scrollIntoView({behavior:'smooth',block:'start'});
+  wireGate('g',FORM_ID,function(){return {audit_score:String(score),audit_band:band.name}},function(name){unlocked=true;showResults(name)});
+}
+function gaps(){var out=[];answers.forEach(function(a,i){if(a!==QS[i].v) out.push(QS[i].gap)});return out.slice(0,3)}
+function showResults(name){
+  $('#gate').classList.add('hidden'); var r=$('#results'); r.classList.remove('hidden');
+  var gp=gaps(), gh='';
+  if(gp.length){gh='<h3>Your gaps</h3><div>'+gp.map(function(t,i){return '<div class="gap"><span class="n">'+(i+1)+'</span><span>'+esc(t)+'</span></div>'}).join('')+'</div>'}
+  else {gh='<h3>Your gaps</h3><p>No major gaps. Your next step is protecting the rhythm.</p>'}
+  var shareText='I took The Executive Silence Audit and scored '+score+' out of 6. It’s two minutes, and worth it: '+location.origin+location.pathname;
+  var li='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.origin+location.pathname);
+  r.innerHTML='<div class="card stack" style="margin-bottom:26px"><div class="score"><div class="ring" role="img" aria-label="Your score: '+score+' of 6"><b>'+score+'</b><small>of 6</small></div><div><p class="eyebrow" style="margin-bottom:6px">'+(name?esc(name)+', your result':'Your result')+'</p><p class="band">'+band.name+'</p></div></div>'
+   +'<p>'+esc(band.body)+'</p>'+gh
+   +'<div class="tint"><p class="eyebrow" style="margin-bottom:6px">Your first move</p><p style="margin:0 0 8px;color:var(--ink)">'+esc(band.move)+'</p>'+(band.alt?'<p style="margin:0">'+esc(band.alt)+'</p>':'')+'</div>'
+   +'<div class="row"><a class="btn gold" href="'+BOOKING+'" target="_blank" rel="noopener">Schedule a Consult</a><a class="btn sec" href="'+band.p.h+'">'+band.p.t+'</a></div>'
+   +'<p class="fine" style="margin:0">Engagements begin with a free 30-minute conversation. No deck, no obligation.</p></div>'
+   +'<div class="panel stack"><div><h3>One question to sit with</h3><p style="margin:0">Which opinion from your last leadership meeting would you be willing to see in print?</p></div>'
+   +'<div><h3>Share your score</h3><p class="help" style="margin-bottom:12px">Where do your peers land? Post your score and invite them to find out.</p><div class="row"><a class="btn sec" href="'+li+'" target="_blank" rel="noopener">Share on LinkedIn</a><button class="btn sec" type="button" id="copy">Copy Post Text</button><span class="fine" id="copied" role="status" style="margin:0"></span></div></div>'
+   +'<div><button class="btn sec" type="button" id="retake">Retake the Audit</button></div></div>';
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+  $('#copy').addEventListener('click',function(){var done=function(){$('#copied').textContent='Copied.'};try{navigator.clipboard.writeText(shareText).then(done,function(){prompt('Copy this text:',shareText)})}catch(e){prompt('Copy this text:',shareText)}});
+  $('#retake').addEventListener('click',function(){answers=[];store('audit_answers',answers);cur=0;r.classList.add('hidden');$('#intro').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
+}
+$('#start').addEventListener('click',function(){
+  $('#intro').classList.add('hidden'); $('#quiz').classList.remove('hidden'); cur=0; answers=[]; renderQ();
+  $('#quiz').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+</script>
+</body>
+</html>

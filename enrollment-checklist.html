@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Seventeen-Year-Old Test | The Story Desk</title>
+<meta name="description" content="Ten questions to see whether your admissions messaging works for the student reading it, and the parent reading over her shoulder.">
+<meta property="og:title" content="The Seventeen-Year-Old Test | The Story Desk">
+<meta property="og:description" content="Ten questions to see whether your admissions messaging works for the student reading it, and the parent reading over her shoulder.">
+<meta name="theme-color" content="#1A1814">
+<style>
+:root{--gold:#C9A961;--gold-dark:#B0904A;--ink:#1A1814;--gray:#5C5750;--light:#9E9892;--off:#F5F4F2;--mist:#E8E6E1;--stone:#D8D4CF;--tint:#F3ECD9;--white:#fff;--ok:#5B7A52;--crit:#9E4A3C;
+--display:Georgia,"Times New Roman",Times,serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--gray);font-family:var(--sans);font-size:17px;line-height:1.7}
+a{color:var(--ink)}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--gold-dark);outline-offset:2px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone)}
+.top-in{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 28px}
+.mark{display:flex;align-items:baseline;line-height:1;text-decoration:none}
+.mark .the{font:500 8px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-right:4px;transform:translateY(-3px)}
+.mark .story{font:italic 400 24px var(--display);color:var(--gold-dark)}
+.mark .desk{font:700 24px var(--display);color:var(--ink)}
+.back{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--gray);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.back:hover{color:var(--ink);border-bottom-color:var(--gold)}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.wide{max-width:1000px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 14px}
+h1{font:400 clamp(34px,5vw,54px)/1.12 var(--display);letter-spacing:-.01em;color:var(--ink);margin:0 0 18px;text-wrap:balance}
+h1 em,h2 em{font-style:italic;color:var(--gold-dark)}
+h2{font:400 clamp(26px,3.2vw,34px)/1.25 var(--display);color:var(--ink);margin:0 0 14px;text-wrap:balance}
+h3{font:700 20px/1.3 var(--display);color:var(--ink);margin:0 0 8px}
+p{margin:0 0 16px;text-wrap:pretty}
+.lede{font-size:19px;line-height:1.7}
+.hero{padding:72px 0 40px}
+.rule{width:120px;height:1px;background:var(--gold);margin:0 0 28px}
+.card{background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:32px}
+.panel{background:var(--off);border:1px solid var(--stone);border-radius:6px;padding:28px}
+.tint{background:var(--tint);border:1px solid var(--gold);border-radius:6px;padding:22px 26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 28px;font:700 14px var(--sans);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);border-radius:4px;background:var(--ink);color:#fff;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s}
+.btn:hover{background:#000}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.btn.sec{background:transparent;color:var(--ink);border-color:var(--stone)}
+.btn.sec:hover{border-color:var(--ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.progress{display:flex;gap:6px;margin:0 0 26px}
+.progress i{flex:1;height:4px;background:var(--mist);border-radius:2px}
+.progress i.on{background:var(--gold)}
+.qcount{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--light);margin:0 0 10px}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0;font:400 clamp(22px,2.8vw,28px)/1.3 var(--display);color:var(--ink);margin-bottom:10px}
+.help{font-size:15px;color:var(--gray);margin:0 0 22px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.choices.three{grid-template-columns:repeat(3,1fr);gap:10px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:64px;padding:14px 16px;border:1px solid var(--stone);border-radius:6px;background:var(--white);font:700 15px/1.35 var(--sans);color:var(--ink);transition:border-color .2s,background .2s}
+.choice:hover span{border-color:var(--gold)}
+.choice input:checked+span{border-color:var(--gold-dark);background:var(--tint);box-shadow:inset 0 0 0 1px var(--gold-dark)}
+.choice input:focus-visible+span{outline:3px solid var(--gold-dark);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+label.f{display:block;font:700 13px var(--sans);letter-spacing:.04em;color:var(--ink);margin:0 0 6px}
+input[type=text],input[type=email],select,textarea{width:100%;font:16px/1.5 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--stone);border-radius:4px;padding:12px 14px;min-height:48px}
+textarea{min-height:150px;resize:vertical;line-height:1.6}
+input:focus,select:focus,textarea:focus{border-color:var(--gold-dark);outline:3px solid rgba(201,169,97,.35)}
+.field{margin-bottom:16px}
+.fine{font-size:14px;color:var(--gray);margin:10px 0 0}
+.err{color:var(--crit);font-size:14px;margin:8px 0 0;min-height:1em}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.score{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.ring{width:132px;height:132px;border-radius:50%;border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ink);color:#fff;flex:0 0 auto}
+.ring b{font:400 54px/1 var(--display);color:#fff}
+.ring small{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.band{font:italic 400 clamp(28px,4vw,40px)/1.15 var(--display);color:var(--gold-dark);margin:0}
+.gap{border-top:1px solid var(--stone);padding:14px 0;display:flex;gap:16px}
+.gap:last-child{border-bottom:1px solid var(--stone)}
+.gap .n{flex:0 0 28px;font:italic 400 24px/1 var(--display);color:var(--gold-dark)}
+.stack>*+*{margin-top:26px}
+.sticky-score{position:sticky;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--stone);padding:12px 0;z-index:5}
+.sticky-score .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap}
+.sticky-score .btn{min-height:44px;padding:10px 22px}
+.tog{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1px solid var(--stone);border-radius:6px;background:var(--off);margin-bottom:26px}
+.tog input{width:22px;height:22px;margin-top:3px;accent-color:#B0904A;flex:0 0 auto}
+.q{padding:22px 0;border-top:1px solid var(--stone);scroll-margin:90px 0 110px}
+.quad,.chk{scroll-margin:90px 0 110px}
+.q:first-of-type{border-top:1px solid var(--gold)}
+.q h3{font-size:19px}
+.q .n{font:italic 400 22px var(--display);color:var(--gold-dark);margin-right:8px}
+.chk{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1px solid var(--stone);border-radius:6px;background:#fff;margin-bottom:10px;cursor:pointer}
+.chk:hover{border-color:var(--gold)}
+.chk input{width:22px;height:22px;margin-top:3px;accent-color:#B0904A;flex:0 0 auto}
+.quad{border:1px solid var(--stone);border-radius:6px;padding:24px 26px;margin-bottom:22px;background:var(--off)}
+.quad h3 .n{font:italic 400 28px var(--display);color:var(--gold-dark);margin-right:10px}
+.quad .sub{font-size:14px;color:var(--gray);margin:0 0 14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer.bot{background:var(--ink);margin-top:96px;padding:40px 0;color:var(--light);font-size:13px}
+footer.bot a{color:var(--light)}
+.hidden{display:none!important}
+.wc{font-size:13px;color:var(--gray);margin-top:6px;display:flex;justify-content:space-between;gap:10px}
+.wc .ok{color:var(--ok);font-weight:700}
+.wc .warn{color:var(--crit);font-weight:700}
+.stepper{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.stepper li{flex:1 1 90px}
+.stepper button{width:100%;min-height:44px;background:#fff;border:1px solid var(--stone);border-radius:4px;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gray);cursor:pointer;padding:8px 6px}
+.stepper button[aria-current=step]{border-color:var(--gold-dark);background:var(--tint);color:var(--ink)}
+.stepper button.done{border-color:var(--ok);color:var(--ok)}
+#printArea{display:none}
+@media (max-width:640px){
+ .top-in{padding:12px 18px}
+ .hero{padding:44px 0 24px}
+ .card{padding:22px 18px}
+ .choices{grid-template-columns:1fr}
+ .choices.three{grid-template-columns:1fr}
+ .btn{width:100%}
+ .nav .btn{width:auto;flex:1}
+ .ring{width:112px;height:112px}.ring b{font-size:44px}
+}
+@media print{
+ body{background:#fff;color:#000;font-size:12pt}
+ body>*:not(#printArea){display:none!important}
+ #printArea{display:block!important}
+ @page{margin:.7in}
+ .pr-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5pt solid #C9A961;padding-bottom:8pt;margin-bottom:14pt}
+ .pr-head .m{font:italic 400 18pt Georgia,serif;color:#8a6f2e}
+ .pr-head .m b{font:700 18pt Georgia,serif;color:#1A1814;font-style:normal}
+ .pr-head .t{font:700 8pt Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#5C5750}
+ #printArea h1{font:400 22pt Georgia,serif;margin:0 0 6pt}
+ #printArea h2{font:700 13pt Georgia,serif;margin:14pt 0 4pt;color:#1A1814}
+ #printArea p,#printArea li{font:11pt/1.5 Georgia,serif;color:#1A1814;margin:0 0 6pt}
+ #printArea .box{display:inline-block;width:10pt;height:10pt;border:1pt solid #1A1814;margin-right:6pt;vertical-align:-1pt;text-align:center;line-height:9pt;font-size:9pt}
+ #printArea .pb{page-break-before:always}
+ #printArea .foot{margin-top:18pt;border-top:.5pt solid #ccc;padding-top:8pt;font:8.5pt Arial,sans-serif;color:#5C5750}
+ #printArea .draft p{white-space:pre-wrap}
+}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="top-in">
+  <a class="mark" href="index.html" aria-label="The Story Desk home"><span class="the">The</span><span class="story">Story</span><span class="desk">Desk</span></a>
+  <a class="back" href="index.html#highered">&larr; Back to Higher Education</a>
+</div></header>
+<main id="main">
+
+<div class="wrap">
+ <section class="hero">
+  <p class="eyebrow">Free Checklist for Enrollment &amp; Admissions Teams</p>
+  <div class="rule"></div>
+  <h1>The <em>Seventeen-Year-Old</em> Test</h1>
+  <p class="lede">Ten questions to see whether your admissions messaging works for the student reading it, and the parent reading over her shoulder.</p>
+  <p>Most institutions don&rsquo;t have a storytelling problem. They have a capacity problem. This checklist helps you see where your viewbook, web pages, and email sequences are working and where they aren&rsquo;t, in about ten minutes and without hiring anyone.</p>
+  <div class="tint"><p style="margin:0"><b style="color:var(--ink)">How to use it.</b> Look at your most-used viewbook page, your top program page, and your first admitted-student email. For each question, mark <b>Yes</b> (2 points), <b>Partly</b> (1), or <b>Not yet</b> (0).</p></div>
+ </section>
+ <section id="tool" style="padding-bottom:30px">
+  <div class="tog"><input type="checkbox" id="cath"><label for="cath"><b style="color:var(--ink)">We&rsquo;re a Catholic institution.</b><br><span class="help" style="margin:0">Adds three questions about describing mission honestly and welcomingly.</span></label></div>
+  <div id="qs"></div>
+ </section>
+ <section class="hidden" id="gate"></section>
+ <section class="hidden" id="results"></section>
+</div>
+<div class="sticky-score" id="bar"><div class="wrap"><div><b style="color:var(--ink)" id="cnt">0 of 7 answered</b> <span class="fine" id="pts" style="margin:0 0 0 8px"></span></div><button class="btn gold" type="button" id="done" disabled>Get My Score</button></div></div>
+
+</main>
+<footer class="bot"><div class="wrap wide" style="display:flex;flex-wrap:wrap;gap:8px 14px">
+  <span>thestory-desk.com</span><span>|</span><span>Clare Venegas</span><span>|</span><a href="mailto:hello@clarevenegas.com">hello@clarevenegas.com</a><span>|</span><span>&copy; 2026 The Story Desk, LLC</span>
+</div></footer>
+<div id="printArea" aria-hidden="true"></div>
+<script>
+
+var BOOKING = 'https://calendar.app.google/uDw4tAbS9pRey6J37';
+var ML_ACCOUNT = '2497680';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function store(k,v){try{if(v===undefined){var r=localStorage.getItem('tsd_'+k);return r?JSON.parse(r):null}localStorage.setItem('tsd_'+k,JSON.stringify(v))}catch(e){return null}}
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)}
+function mlSubscribe(formId, fields){
+  var fd=new FormData();
+  Object.keys(fields).forEach(function(k){var v=fields[k]; if(v!==undefined&&v!==null&&v!=='') fd.append('fields['+k+']',v)});
+  fd.append('ml-submit','1'); fd.append('anticsrf','true');
+  return fetch('https://assets.mailerlite.com/jsonp/'+ML_ACCOUNT+'/forms/'+formId+'/subscribe',{method:'POST',body:fd,mode:'no-cors'}).then(function(){return true}).catch(function(){return false});
+}
+function gateHTML(opts){
+  // opts: id, button, consent, showType
+  var sel = opts.showType ? '<div class="field"><label class="f" for="'+opts.id+'-type">I lead a...</label><select id="'+opts.id+'-type"><option value="">Choose one (optional)</option><option value="Company or startup">Company or startup</option><option value="College or university">College or university</option><option value="Nonprofit, parish, or ministry">Nonprofit, parish, or ministry</option><option value="Other">Other</option></select></div>' : '';
+  return '<form id="'+opts.id+'" novalidate autocomplete="on">'
+   +'<div class="field"><label class="f" for="'+opts.id+'-name">First name</label><input type="text" id="'+opts.id+'-name" name="name" autocomplete="given-name" required></div>'
+   +'<div class="field"><label class="f" for="'+opts.id+'-email">Email</label><input type="email" id="'+opts.id+'-email" name="email" autocomplete="email" inputmode="email" required></div>'
+   + sel
+   +'<div class="hp" aria-hidden="true"><label>Website<input type="text" id="'+opts.id+'-hp" tabindex="-1" autocomplete="off"></label></div>'
+   +'<button class="btn gold" type="submit" id="'+opts.id+'-btn">'+opts.button+'</button>'
+   +'<p class="err" id="'+opts.id+'-err" role="alert"></p>'
+   +'<p class="fine">'+opts.consent+'</p></form>';
+}
+function wireGate(id, formId, extra, done){
+  var f=$('#'+id); if(!f) return;
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=$('#'+id+'-name').value.trim(), email=$('#'+id+'-email').value.trim(), err=$('#'+id+'-err');
+    if($('#'+id+'-hp').value){return}
+    if(!name){err.textContent='Please add your first name.';$('#'+id+'-name').focus();return}
+    if(!validEmail(email)){err.textContent='That email looks like it’s missing something. Please check it.';$('#'+id+'-email').focus();return}
+    err.textContent='';
+    var btn=$('#'+id+'-btn'); btn.disabled=true; var old=btn.textContent; btn.textContent='One moment…';
+    var t=$('#'+id+'-type'); var data=extra(); data.name=name; data.email=email; if(t&&t.value) data.organization_type=t.value;
+    store('lead',{name:name,email:email});
+    mlSubscribe(formId,data).then(function(){ done(name,email,t&&t.value); });
+  });
+  var saved=store('lead'); if(saved){ if(saved.name) $('#'+id+'-name').value=saved.name; if(saved.email) $('#'+id+'-email').value=saved.email; }
+}
+function shell(){
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){} });
+}
+
+var FORM_ID='200063422524557081';
+
+var CORE=[
+ {t:'Outcome first',q:'Does the opening say what a student will become, not just what you offer?',tip:'Rewrite the first line of your top page to start with who the student becomes (“You’ll graduate able to...”), then what you offer.'},
+ {t:'Ten-second difference',q:'Could a student tell in ten seconds what makes you different from the school two hours away?',tip:'Finish this sentence in under ten words: “Unlike the school two hours away, we ___.” If you can’t, that is your first messaging job.'},
+ {t:'Two audiences',q:'Does the page answer the parent’s questions (cost, outcomes, safety) without talking over the student?',tip:'Add a short “For parents” section that answers cost, outcomes, and safety, written to the parent rather than the student.'},
+ {t:'Proof, not adjectives',q:'Do you show specific outcomes, names, and numbers instead of “vibrant” and “transformative”?',tip:'Replace each adjective with a fact: a name, a number, a placement, or a short story.'},
+ {t:'A small next step',q:'Is the next step obvious and easy (visit, ask a question, start an application)?',tip:'Give each page one primary next step, such as visit, ask, or apply, and make it a single clear button.'},
+ {t:'A human voice',q:'Does it sound like a person, not a committee?',tip:'Read the page aloud. Cut every sentence you wouldn’t say to a student across a table.'},
+ {t:'Stage-aware follow-up',q:'Do your emails change as students move from inquiry to applicant to admit to deposit?',tip:'Map your emails to four stages (inquiry, applicant, admit, deposit) and write one message for each decision point.'}
+];
+var CATH=[
+ {t:'Mission in concrete terms',q:'Do you describe the mission through what happens on a Tuesday, not only through the mission statement?',tip:'Describe one ordinary day of mission in action, such as a class, a Mass, or a service project, instead of quoting the mission statement.'},
+ {t:'Welcoming without watering down',q:'Would a non-Catholic or lapsed-Catholic family feel welcome rather than screened out, and would a devout family feel understood?',tip:'Say plainly who is welcome, what they can expect, and what is optional, without softening what you believe.'},
+ {t:'Honest about faith life',q:'Do you describe campus faith life truthfully, without hiding it or overselling it?',tip:'State what faith life on campus actually looks like: Mass times, service, required courses. No hiding, no overselling.'}
+];
+var vals={}; var catholic=false;
+function list(){return catholic?CORE.concat(CATH):CORE}
+function render(){
+  var L=list(), h='';
+  L.forEach(function(Q,i){
+    var part=(catholic&&i===7)?'<h2 style="margin:38px 0 6px">Additional questions for Catholic institutions</h2><p class="help">Optional. Skip this section by unchecking the box above.</p>':'';
+    if(i===0) part='<h2 style="margin:0 0 6px">Core questions</h2><p class="help">For all institutions.</p>';
+    var v=vals[i];
+    h+=part+'<fieldset class="q"><legend style="font:700 19px/1.35 var(--display);margin-bottom:6px"><span class="n" style="font:italic 400 22px var(--display);color:var(--gold-dark);margin-right:8px">'+(i+1)+'</span>'+esc(Q.t)+'</legend><p class="help" style="margin-bottom:14px">'+esc(Q.q)+'</p><div class="choices three">'
+     +[['2','Yes'],['1','Partly'],['0','Not yet']].map(function(o){return '<label class="choice"><input type="radio" name="q'+i+'" value="'+o[0]+'"'+(v===o[0]?' checked':'')+'><span>'+o[1]+'</span></label>'}).join('')+'</div></fieldset>';
+  });
+  $('#qs').innerHTML=h;
+  $$('#qs input[type=radio]').forEach(function(r){r.addEventListener('change',function(){vals[r.name.slice(1)]=r.value;update()})});
+  update();
+}
+function sums(){var core=0,cath=0,ans=0;list().forEach(function(Q,i){if(vals[i]!==undefined){ans++; if(i<7) core+=parseInt(vals[i],10); else cath+=parseInt(vals[i],10)}});return {core:core,cath:cath,ans:ans}}
+function update(){var s=sums(),n=list().length;$('#cnt').textContent=s.ans+' of '+n+' answered';$('#pts').textContent='Core score: '+s.core+' of 14'+(catholic?' · Catholic add-on: '+s.cath+' of 6':'');$('#done').disabled=s.ans<n}
+function coreBand(s){return s>=12?['Strong. Protect it.','Your basics are in place. Keep an eye on proof and follow-up so they don’t slip as staff and cycles change.']:s>=7?['Solid, with gaps worth closing.','You have a working foundation. The gaps below are where a student or parent is most likely to lose the thread.']:['Your message is working against you.','Start with Questions 1, 2, and 4. Fixing those three changes how every other page reads.']}
+function cathBand(s){return s>=5?['Clear and confident.']:s>=3?['Some mission language is still abstract.']:['Mission is present but hard to see. This is the highest-return fix.']}
+function fixFirst(){var out=[];list().forEach(function(Q,i){var v=parseInt(vals[i],10);if(v<2)out.push({i:i,v:v,Q:Q})});out.sort(function(a,b){return a.v-b.v||a.i-b.i});return out.slice(0,3)}
+function buildPrint(name){
+  var s=sums(), cb=coreBand(s.core);
+  var h='<div class="pr-head"><div class="m">The <b>Story</b><b>Desk</b></div><div class="t">The Seventeen-Year-Old Test</div></div><h1>Enrollment Messaging Checklist</h1><p style="color:#5C5750;font-size:10pt">'+(name?esc(name)+' · ':'')+'Mark: Yes (2) · Partly (1) · Not yet (0)</p>';
+  h+='<h2>Part A. Core questions</h2>';
+  CORE.forEach(function(Q,i){var v=vals[i];h+='<p><b>'+(i+1)+'. '+esc(Q.t)+'.</b> '+esc(Q.q)+'<br><span class="box">'+(v==='2'?'✓':'')+'</span>Yes (2) &nbsp; <span class="box">'+(v==='1'?'✓':'')+'</span>Partly (1) &nbsp; <span class="box">'+(v==='0'?'✓':'')+'</span>Not yet (0)</p>'});
+  if(catholic){h+='<h2>Part B. Additional questions for Catholic institutions</h2>';CATH.forEach(function(Q,j){var i=7+j,v=vals[i];h+='<p><b>'+(i+1)+'. '+esc(Q.t)+'.</b> '+esc(Q.q)+'<br><span class="box">'+(v==='2'?'✓':'')+'</span>Yes (2) &nbsp; <span class="box">'+(v==='1'?'✓':'')+'</span>Partly (1) &nbsp; <span class="box">'+(v==='0'?'✓':'')+'</span>Not yet (0)</p>'})}
+  h+='<div class="pb"></div><div class="pr-head"><div class="m">The <b>Story</b><b>Desk</b></div><div class="t">Your results</div></div><h1>Score: '+s.core+' of 14</h1><p><b>'+esc(cb[0])+'</b> '+esc(cb[1])+'</p>';
+  if(catholic){h+='<h2>Catholic add-on: '+s.cath+' of 6</h2><p>'+esc(cathBand(s.cath)[0])+'</p>'}
+  var ff=fixFirst(); if(ff.length){h+='<h2>Fix these first</h2>';ff.forEach(function(f){h+='<p><b>'+(f.i+1)+'. '+esc(f.Q.t)+'.</b> '+esc(f.Q.tip)+'</p>'})}
+  h+='<h2>What comes next</h2><p>A checklist tells you where. It doesn’t tell you what to say. The Communications &amp; Messaging Audit reviews your enrollment and advancement messaging and returns priorities and a recommended plan. The fee is credited toward your first month if a retainer follows.</p><p><b>Schedule a Conversation:</b> '+BOOKING+'</p>';
+  h+='<div class="foot">The Story Desk · Clare Venegas · thestory-desk.com · hello@clarevenegas.com</div>';
+  $('#printArea').innerHTML=h;
+}
+function showGate(){
+  var s=sums(), cb=coreBand(s.core);
+  $('#tool').classList.add('hidden');$('#bar').classList.add('hidden');var g=$('#gate');g.classList.remove('hidden');
+  g.innerHTML='<div class="card stack" style="margin-top:40px"><div class="score"><div class="ring" role="img" aria-label="Core score '+s.core+' of 14"><b>'+s.core+'</b><small>of 14</small></div><div><p class="eyebrow" style="margin-bottom:6px">Your core score</p><p class="band">'+esc(cb[0])+'</p></div></div>'
+   +'<div><h2>See what to fix first.</h2><p>Enter your email to get your “fix these first” list and the printable two-page checklist for your next staff meeting.</p>'
+   +gateHTML({id:'g',button:'Send Me the Checklist',consent:'No spam. Occasional notes on communications and storytelling — unsubscribe anytime.',showType:false})+'</div></div>';
+  g.scrollIntoView({behavior:'smooth',block:'start'});
+  wireGate('g',FORM_ID,function(){return {checklist_score:String(s.core),organization_type:'College or university'}},function(name){showResults(name)});
+}
+function showResults(name){
+  var s=sums(), cb=coreBand(s.core), ff=fixFirst(); $('#gate').classList.add('hidden'); var r=$('#results'); r.classList.remove('hidden'); buildPrint(name);
+  var fh=ff.length?'<h3>Fix these first</h3><div>'+ff.map(function(f,i){return '<div class="gap"><span class="n">'+(f.i+1)+'</span><span><b style="color:var(--ink)">'+esc(f.Q.t)+'.</b> '+esc(f.Q.tip)+'</span></div>'}).join('')+'</div>':'<p>No gaps to flag. Nicely done.</p>';
+  r.innerHTML='<div class="card stack" style="margin-top:40px"><div class="score"><div class="ring"><b>'+s.core+'</b><small>of 14</small></div><div><p class="eyebrow" style="margin-bottom:6px">'+(name?esc(name)+', your core score':'Your core score')+'</p><p class="band">'+esc(cb[0])+'</p></div></div><p>'+esc(cb[1])+'</p>'
+   +(catholic?'<div class="tint"><p class="eyebrow" style="margin-bottom:4px">Catholic add-on: '+s.cath+' of 6</p><p style="margin:0;color:var(--ink)">'+esc(cathBand(s.cath)[0])+'</p></div>':'')+fh
+   +'<div class="panel"><h3>A checklist tells you where. It doesn’t tell you what to say.</h3><p style="margin-bottom:16px">The Communications &amp; Messaging Audit reviews your enrollment and advancement messaging and returns priorities and a recommended plan. The fee is credited toward your first month if a retainer follows.</p><div class="row"><a class="btn gold" href="'+BOOKING+'" target="_blank" rel="noopener">Schedule a Conversation</a><button class="btn sec" type="button" id="pr">Print or Save as PDF</button></div></div>'
+   +'<p class="fine" style="margin:0">Engagements typically begin with a 30-minute conversation about your team’s current capacity and where the gaps are. No deck, no pressure.</p></div>';
+  r.scrollIntoView({behavior:'smooth',block:'start'}); $('#pr').addEventListener('click',function(){window.print()});
+}
+$('#cath').addEventListener('change',function(){catholic=this.checked;render()});
+$('#done').addEventListener('click',showGate);
+render();
+
+</script>
+</body>
+</html>
