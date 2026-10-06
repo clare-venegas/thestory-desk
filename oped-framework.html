@@ -186,10 +186,11 @@ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp
 function store(k,v){try{if(v===undefined){var r=localStorage.getItem('tsd_'+k);return r?JSON.parse(r):null}localStorage.setItem('tsd_'+k,JSON.stringify(v))}catch(e){return null}}
 function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)}
 function mlSubscribe(formId, fields){
-  var fd=new FormData();
-  Object.keys(fields).forEach(function(k){var v=fields[k]; if(v!==undefined&&v!==null&&v!=='') fd.append('fields['+k+']',v)});
-  fd.append('ml-submit','1'); fd.append('anticsrf','true');
-  return fetch('https://assets.mailerlite.com/jsonp/'+ML_ACCOUNT+'/forms/'+formId+'/subscribe',{method:'POST',body:fd,mode:'no-cors'}).then(function(){return true}).catch(function(){return false});
+  return fetch('https://formspree.io/f/xyekkepw',{
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify(fields)
+  }).then(function(){return true}).catch(function(){return false});
 }
 function gateHTML(opts){
   // opts: id, button, consent, showType
