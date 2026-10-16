@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crisis Readiness Audit | The Story Desk</title>
+<style>
+/* Layout concept: a single-column working document. Intro, six one-page sections, then a results report that ends in one dark call-to-action panel. Brand tokens come straight from the Story Desk brand guide. */
+:root {
+  --bg: #FFFFFF;
+  --panel: #F5F4F2;
+  --ink: #1A1814;
+  --body: #5C5750;
+  --muted: #736D65;
+  --rule: #D8D4CF;
+  --mist: #E8E6E1;
+  --gold: #C9A961;
+  --gold-ink: #8A6A24;
+  --warn: #9B3D2E;
+  --btn-bg: #1A1814;
+  --btn-fg: #FFFFFF;
+  --cta-bg: #1A1814;
+  --cta-fg: #F5F4F2;
+  --cta-muted: #BDB7AD;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15130F; --panel: #1F1C17; --ink: #F2EFEA; --body: #BDB7AD; --muted: #9A938A;
+    --rule: #3A352D; --mist: #2B2721; --gold: #C9A961; --gold-ink: #D9BC74; --warn: #E39A89;
+    --btn-bg: #C9A961; --btn-fg: #1A1814; --cta-bg: #26221B; --cta-fg: #F2EFEA; --cta-muted: #BDB7AD;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15130F; --panel: #1F1C17; --ink: #F2EFEA; --body: #BDB7AD; --muted: #9A938A;
+  --rule: #3A352D; --mist: #2B2721; --gold: #C9A961; --gold-ink: #D9BC74; --warn: #E39A89;
+  --btn-bg: #C9A961; --btn-fg: #1A1814; --cta-bg: #26221B; --cta-fg: #F2EFEA; --cta-muted: #BDB7AD;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 40px; }
+h1, h2, h3 { font-family: var(--serif); color: var(--ink); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--gold-ink); }
+:focus-visible { outline: 2px solid var(--gold-ink); outline-offset: 2px; }
+
+/* Header and footer lockups */
+.top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--gold); }
+.logo { font-family: var(--serif); font-size: 30px; line-height: 1; white-space: nowrap; }
+.logo .the { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: .16em; color: var(--ink); margin-right: 6px; }
+.logo .story { font-style: italic; color: var(--gold); }
+.logo .desk { font-weight: 700; color: var(--ink); }
+.tag { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); text-align: right; }
+.foot { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--gold); display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 12px; color: var(--muted); }
+.foot span + span::before { content: "|"; margin: 0 10px; color: var(--rule); }
+.foot .mark { font-family: var(--serif); font-style: italic; color: var(--gold-ink); }
+.foot a { color: inherit; }
+
+/* Labels, buttons, fields */
+.label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); }
+.btn { font: inherit; font-size: 15px; font-weight: 700; padding: 13px 22px; border: 1px solid var(--btn-bg); background: var(--btn-bg); color: var(--btn-fg); cursor: pointer; border-radius: 2px; }
+.btn:hover { opacity: .88; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn.ghost:hover { border-color: var(--ink); opacity: 1; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.field input, .field select { font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 2px; padding: 11px 12px; width: 100%; min-width: 0; }
+.field input::placeholder { color: var(--muted); }
+
+/* Intro */
+.hero { padding-block: 40px 28px; display: grid; gap: 18px; }
+.hero h1 { font-weight: 400; font-size: clamp(30px, 6vw, 44px); line-height: 1.12; }
+.hero h1 em, .cta h2 em { font-style: italic; color: var(--gold-ink); }
+.hero .sub { font-size: 18px; max-width: 60ch; }
+.gives { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.gives li { padding: 14px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 8.5rem 1fr; gap: 4px 16px; }
+.gives strong { font-family: var(--serif); color: var(--ink); font-size: 16px; }
+.setup { margin-top: 28px; background: var(--panel); padding: 24px; display: grid; gap: 16px; }
+.setup .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.setup .row.one { grid-template-columns: 1fr; }
+.setup .meta { font-size: 13px; color: var(--muted); }
+.setup .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+
+/* Progress */
+.progress { margin-top: 28px; display: grid; gap: 10px; }
+.segs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.segs i { height: 4px; background: var(--mist); display: block; }
+.segs i.done { background: var(--gold); }
+.segs i.now { background: var(--ink); }
+.progress .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+
+/* Section page */
+.sec-head { padding-block: 28px 8px; display: grid; gap: 10px; }
+.sec-head h2 { font-size: clamp(24px, 4.5vw, 30px); font-weight: 700; line-height: 1.15; }
+.sec-head .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink); }
+.scale { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-block: 14px 8px; }
+.scale div { padding: 10px 10px 10px 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+.scale b { display: block; color: var(--ink); font-size: 12px; }
+.q { border: 0; padding: 22px 0; margin: 0; border-bottom: 1px solid var(--rule); min-width: 0; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 4px 0; }
+.q legend { display: contents; }
+.q .num { font-family: var(--serif); font-size: 20px; color: var(--gold-ink); line-height: 1.3; grid-row: 1; grid-column: 1; }
+.q .text { grid-row: 1; grid-column: 2; color: var(--ink); font-size: 16px; line-height: 1.5; }
+.q .impact { display: inline-block; margin-left: 8px; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); white-space: nowrap; }
+.opts { grid-column: 2; grid-row: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 12px; }
+.opt { position: relative; display: block; }
+.opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.opt span { display: block; text-align: center; font-size: 13px; padding: 10px 6px; border: 1px solid var(--rule); border-radius: 2px; color: var(--body); background: var(--bg); }
+.opt:hover span { border-color: var(--ink); }
+.opt input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--bg); font-weight: 700; }
+.opt input:focus-visible + span { outline: 2px solid var(--gold-ink); outline-offset: 2px; }
+.q .miss { grid-column: 2; grid-row: 3; font-size: 13px; color: var(--warn); margin-top: 8px; font-weight: 700; }
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 28px; }
+.nav .msg { flex-basis: 100%; font-size: 14px; color: var(--warn); font-weight: 700; min-height: 0; }
+
+/* Results */
+.res-head { padding-block: 36px 8px; display: grid; gap: 12px; }
+.res-head h1 { font-weight: 400; font-size: clamp(26px, 5vw, 36px); line-height: 1.15; }
+.score { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 28px; align-items: end; margin-top: 12px; }
+.score .big { font-family: var(--serif); font-size: clamp(64px, 14vw, 96px); line-height: .9; color: var(--ink); font-variant-numeric: tabular-nums; }
+.score .big small { font-size: .4em; color: var(--muted); margin-left: 2px; }
+.score .band { display: grid; gap: 6px; padding-bottom: 6px; }
+.score .band p { color: var(--body); font-size: 16px; }
+.bar { position: relative; height: 10px; background: var(--mist); margin-top: 6px; }
+.bar .fill { position: absolute; inset: 0 auto 0 0; background: var(--gold); transition: width .5s ease; }
+.bar .tick { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--muted); opacity: .6; }
+.ticks { position: relative; height: 18px; font-size: 11px; color: var(--muted); }
+.ticks span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.ticks span:first-child { transform: none; }
+.ticks span:last-child { transform: translateX(-100%); }
+.score-bar { grid-column: 1 / -1; }
+.panel { background: var(--panel); padding: 22px 24px; margin-top: 28px; display: grid; gap: 8px; }
+.sect-title { margin-top: 40px; display: grid; gap: 6px; }
+.sect-title h2 { font-size: 22px; font-weight: 700; }
+.sect-title p { font-size: 14px; color: var(--muted); }
+.drows { margin-top: 12px; border-top: 1px solid var(--rule); }
+.drow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(140px, 240px) 7.5rem; gap: 6px 18px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.drow .name { color: var(--ink); font-size: 15px; }
+.drow .bar { margin-top: 0; }
+.drow .pct { text-align: right; font-size: 14px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.drow .pct em { display: block; font-style: normal; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.drow .strong-flag { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--gold-ink); margin-left: 8px; white-space: nowrap; }
+.gaps { list-style: none; counter-reset: gap; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.gaps li { counter-increment: gap; padding: 18px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 6px 0; }
+.gaps li::before { content: counter(gap); font-family: var(--serif); font-size: 22px; color: var(--gold-ink); line-height: 1.2; grid-row: 1 / span 3; }
+.gaps .dom { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.gaps .what { color: var(--ink); }
+.gaps .fix { font-size: 15px; }
+.gaps .fix b { color: var(--ink); }
+.cta { margin-top: 44px; background: var(--cta-bg); color: var(--cta-fg); padding: 32px 28px; display: grid; gap: 16px; }
+.cta h2 { color: var(--cta-fg); font-weight: 400; font-size: clamp(24px, 4.5vw, 32px); line-height: 1.2; }
+.cta h2 em { color: var(--gold); }
+.cta p { color: var(--cta-muted); max-width: 56ch; }
+.cta .label { color: var(--gold); }
+.cta .contact { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.cta .btn { background: var(--gold); border-color: var(--gold); color: #1A1814; }
+.cta .btn.ghost { background: transparent; color: var(--cta-fg); border-color: #6B655C; }
+.cta .btn.ghost:hover { border-color: var(--cta-fg); }
+.cta .addr { font-size: 15px; color: var(--cta-fg); user-select: all; }
+.cta details { color: var(--cta-muted); font-size: 14px; }
+.cta summary { cursor: pointer; }
+.cta textarea { width: 100%; margin-top: 10px; min-height: 180px; font: 13px/1.5 var(--sans); color: var(--cta-fg); background: transparent; border: 1px solid #6B655C; padding: 12px; resize: vertical; }
+.after { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.fine { margin-top: 24px; font-size: 12px; color: var(--muted); max-width: 70ch; }
+
+@media (max-width: 600px) {
+  .setup .row { grid-template-columns: 1fr; }
+  .gives li { grid-template-columns: 1fr; }
+  .scale { grid-template-columns: 1fr 1fr; }
+  .opts { grid-template-columns: 1fr 1fr; }
+  .score { grid-template-columns: 1fr; }
+  .drow { grid-template-columns: minmax(0, 1fr) 6.5rem; }
+  .drow .bar { grid-column: 1 / -1; grid-row: 2; }
+  .tag { display: none; }
+  .setup { padding: 20px 16px; }
+  .cta { padding: 26px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+a.btn { display: inline-block; text-decoration: none; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo" aria-label="The Story Desk"><span class="the">THE</span><span class="story">Story</span><span class="desk">Desk</span></div>
+    <div class="tag" id="tag"></div>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <footer class="foot">
+    <span class="mark">The Story Desk</span>
+    <span><a href="https://thestory-desk.com" target="_blank" rel="noopener">thestory-desk.com</a></span>
+    <span>Clare Venegas</span>
+    <span>clare@thestory-desk.com</span>
+  </footer>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   REUSING THIS TOOL
+   Everything specific to this scenario lives in the AUDIT object.
+   To build an audit for a different situation (leadership transition,
+   data breach, enrollment decline, merger, financial restatement),
+   copy this file and replace: scenario, hero, windows, domains and
+   their questions (q = question, w = weight 1-3, fix = next step).
+   The scoring, results and summary rebuild themselves.
+------------------------------------------------------------------- */
+/* ------------------------------------------------------------------
+   FORM SETUP: paste your Formspree form URL below
+   (it looks like https://formspree.io/f/abcdwxyz).
+   Submissions arrive at the notification email set in Formspree.
+------------------------------------------------------------------- */
+const FORM_ENDPOINT = "PASTE_FORMSPREE_URL_HERE";
+
+const AUDIT = {
+  kicker: "Crisis Communications Readiness Audit",
+  scenario: "Organizational Crisis Readiness",
+  tag: "Readiness audit for leaders",
+  heroHtml: "Is your organization ready to speak <em>when it matters</em>?",
+  sub: "A ten-minute self-assessment for the leaders of nonprofits, schools, ministries, and mission-driven companies. See where your communications are ready, and where they are exposed, before a crisis tests them.",
+  gives: [
+    ["A readiness score", "Across six areas, from who speaks for the organization to what happens when news breaks early."],
+    ["Your five biggest gaps", "Each one comes with a specific next step you can assign this week."],
+    ["A summary to share", "A plain-text report your board chair, executive team, or counsel can read in two minutes."]
+  ],
+  roles: ["CEO or executive director", "Board chair or member", "President or head of school", "Communications or marketing lead", "Operations, HR, or finance lead", "Other"],
+  windowLabel: "Where are you right now?",
+  windows: [
+    { v: "far", label: "No crisis today; we are planning ahead", note: "You have the most valuable thing: time. Settle decision rights and the core message first, then write the holding statements and rehearse them." },
+    { v: "near", label: "Something sensitive is coming, such as a change, announcement, or decision", note: "You can still shape how this lands. Work the top gaps below, and keep every piece short: one message page, one FAQ, one holding statement." },
+    { v: "live", label: "A situation is developing right now", note: "Speed matters more than polish. This week: name one spokesperson, write the holding statement, and open one place for facts. Close the other gaps once things are steady." },
+    { v: "after", label: "We have recently handled a crisis", note: "The hardest part is behind you. Use what happened to record what worked, fix what did not, and turn it into a plan you can repeat." }
+  ],
+  scale: [
+    { v: 0, label: "Not in place", def: "It does not exist yet." },
+    { v: 1, label: "Informal", def: "It lives in someone's head or inbox." },
+    { v: 2, label: "Documented", def: "It is written down but not yet tested." },
+    { v: 3, label: "Tested", def: "It is approved and has been rehearsed or used." }
+  ],
+  bands: [
+    { min: 0, name: "Exposed", text: "Most of what you need is not in place yet. That is common, and it is fixable. The gaps below are the highest-value work, so start there." },
+    { min: 35, name: "Vulnerable", text: "You have a foundation, but too much depends on individuals and good intentions. A few documented decisions would change your position quickly." },
+    { min: 60, name: "Prepared", text: "You are in good shape. Your remaining gaps are about rehearsal and detail, not direction. Close them before you need them." },
+    { min: 80, name: "Ready", text: "Your organization is ready to lead its own story. Keep the plan current, rehearse once more, and make sure everyone who may speak has the latest version." }
+  ],
+  domains: [
+    {
+      name: "Governance & Decision Rights",
+      tagline: "Who decides, and who speaks.",
+      why: "When no one is clearly in charge of the message, everyone becomes a spokesperson and every rumor gets a different answer.",
+      questions: [
+        { q: "Our leadership has named one accountable lead for all communication during a crisis.", w: 3, fix: "Name a single accountable lead, often the CEO, executive director, or board chair, and record the decision in writing." },
+        { q: "We have assigned an official spokesperson, and a backup, for each audience: employees, donors, the people we serve, and media.", w: 2, fix: "Assign a spokesperson and a backup for each audience. Everyone else routes questions to them." },
+        { q: "Board members and senior staff have agreed not to speak publicly about a crisis outside the approved channels.", w: 2, fix: "Adopt a one-page communications protocol for directors and senior staff, and ask each of them to sign it." },
+        { q: "There is a defined approval path and turnaround time for any statement, including legal review.", w: 2, fix: "Map the approval path: who drafts, who reviews, who approves, and how many hours each step may take." }
+      ]
+    },
+    {
+      name: "Audiences & Stakeholders",
+      tagline: "Who needs to hear what, and in what order.",
+      why: "In a crisis, every group is asking the same question: what does this mean for me? Name the groups before you write a word.",
+      questions: [
+        { q: "We have a written list of every audience a crisis would affect, including employees, volunteers, donors, the people we serve, our board, partners, and the media.", w: 3, fix: "Build an audience map. Include the groups who will hear about it second-hand, not only the ones you reach directly." },
+        { q: "For each audience, we know their top three questions in their own words.", w: 3, fix: "Write each group's top three questions as they would ask them. Talk to two or three people from each group if you can." },
+        { q: "We have decided who hears first, and how we will keep that order from breaking.", w: 2, fix: "Set the sequence, usually the people most affected first, then your wider community. Plan how to hold it if news leaks." },
+        { q: "We know which trusted voices people turn to first, such as longtime staff or volunteer leaders.", w: 1, fix: "Brief these informal leaders just before you go public so they answer from the same facts you do." }
+      ]
+    },
+    {
+      name: "Core Message",
+      tagline: "The story you will tell.",
+      why: "The people you serve are the hero of this story. Your organization is the guide: it understands the concern, has a plan, and says exactly what happens next.",
+      questions: [
+        { q: "We can explain in two or three plain sentences what happened or what is changing, why, and what it means for the people affected.", w: 3, fix: "Draft a three-sentence explanation and test it on someone outside your team. If they can repeat it back, it works." },
+        { q: "We know what we can say now, what we cannot say yet, and who confirms the facts before we speak.", w: 3, fix: "Separate confirmed facts from unknowns, and name the one person who signs off on facts before anything goes out." },
+        { q: "Our message sounds like our mission and values, and avoids jargon, spin, and blame.", w: 2, fix: "State the situation in one honest sentence that sounds like your mission, and cut the jargon." },
+        { q: "The message tells people what happens next, by when, and whether they need to do anything.", w: 2, fix: "Give people three steps with dates. Where no action is needed, say so in plain words." }
+      ]
+    },
+    {
+      name: "Channels & Timing",
+      tagline: "How and when it reaches people.",
+      why: "A clear message that arrives late, out of order, or in only one place still fails. Sequence and repetition do half the work.",
+      questions: [
+        { q: "We have a response timeline for the first 24 hours, the first week, and the weeks after, with an owner for each step.", w: 3, fix: "Build a dated timeline with an owner for every step, starting with the first hour and ending with the follow-up." },
+        { q: "There is one home for answers, a page or document kept current, and a named person or inbox for individual questions.", w: 2, fix: "Publish one FAQ and one question inbox or phone line, and update the FAQ on a set schedule." },
+        { q: "We know which channels we would use for each audience, including how we would reach people who are not online.", w: 2, fix: "List your channels by audience, including phone, text, and in person, and a printed option for people who are not online." },
+        { q: "We have a plan for follow-up afterward: telling people what happened, what changed, and what we learned.", w: 1, fix: "Plan three follow-ups: a confirmation, an update on what changed, and a check-in a few months later." }
+      ]
+    },
+    {
+      name: "Legal & Advisor Alignment",
+      tagline: "Saying what is true, and only what is true.",
+      why: "A crisis carries legal, insurance, and contractual weight. Bring counsel and key advisors into the process early, not after the statement is written.",
+      questions: [
+        { q: "Our counsel has told us which notices, reports, and deadlines apply in the situations we are most likely to face.", w: 3, fix: "Ask counsel to list every required notice and deadline for your top five scenarios, and add each one to your response timeline." },
+        { q: "Counsel or an advisor has reviewed our messaging approach, so we do not promise outcomes we cannot control or admit more than we intend to.", w: 2, fix: "Have counsel review your message templates ahead of time, and remove anything that reads like a guarantee." },
+        { q: "We know what our insurance carrier and key partners, such as funders, sponsors, or regulators, expect us to report, and how quickly.", w: 2, fix: "Review your insurance policy and partner agreements for reporting requirements, and add those deadlines to your timeline." },
+        { q: "We know how we will answer questions we cannot answer yet, or are not permitted to answer.", w: 2, fix: "Draft an honest \"we don't know yet, and we will tell you by [date]\" response, and list the topics that route to counsel." }
+      ]
+    },
+    {
+      name: "Response Readiness",
+      tagline: "When something goes wrong.",
+      why: "Every organization eventually faces a surprise. The ones that keep trust are the ones that answer fast and plainly.",
+      questions: [
+        { q: "We have listed our most likely worst cases, such as a data breach, a leadership or staff scandal, a funding loss, a safety incident, or a public complaint, with a first response drafted for each.", w: 3, fix: "List your five worst cases and draft a first response, owner, and deadline for each." },
+        { q: "A holding statement is ready to release within an hour if news breaks early.", w: 3, fix: "Write a 100-word holding statement that acknowledges the news, commits to an update time, and says where to find facts." },
+        { q: "Our spokespeople have practiced answering the three hardest questions out loud.", w: 2, fix: "Hold a 45-minute rehearsal with the three hardest questions, and review the recording together." },
+        { q: "Someone is assigned to listen for rumors and reactions, in email, group chats, social media, and the break room, and to report daily during a crisis.", w: 1, fix: "Assign a listening role and a five-minute daily check-in with the lead for the length of any crisis." }
+      ]
+    }
+  ],
+  cta: {
+    labelText: "Next step",
+    headHtml: "You don't need a perfect plan. You need <em>a clear one</em>.",
+    body: "Bring these results to a free 30-minute conversation. We will turn your gaps into a communications plan your leadership team can approve, with the message, the sequence, and the holding statements in one place.",
+    email: "clare@thestory-desk.com",
+    site: "https://thestory-desk.com",
+    siteLabel: "thestory-desk.com",
+    book: "https://calendar.app.google/uDw4tAbS9pRey6J37"
+  },
+  fine: "This audit measures communications readiness. It is not legal, insurance, or professional advice. Required notices, timing, and disclosures should be confirmed with your counsel and advisors."
+};
+
+/* ---------- Engine ---------- */
+let N = 0;
+AUDIT.domains.forEach((d, di) => d.questions.forEach(q => { q.id = "q" + (++N); q.n = N; q.di = di; }));
+const TOTAL = N, SECS = AUDIT.domains.length;
+const state = { view: "intro", ctx: { org: "", role: "", win: "" }, a: {}, lead: { name: "", email: "" }, sent: false, failed: false };
+const app = document.getElementById("app");
+document.getElementById("tag").textContent = AUDIT.tag;
+
+function el(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") e.className = v;
+    else if (k === "html") e.innerHTML = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v === true) e.setAttribute(k, "");
+    else e.setAttribute(k, v);
+  }
+  kids.flat().forEach(c => { if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c)); });
+  return e;
+}
+const answered = () => Object.keys(state.a).length;
+const bandOf = p => AUDIT.bands.filter(b => p >= b.min).pop();
+function pctOf(qs) {
+  let got = 0, max = 0;
+  qs.forEach(q => { got += (state.a[q.id] ?? 0) * q.w; max += 3 * q.w; });
+  return Math.round(got / max * 100);
+}
+const allQs = () => AUDIT.domains.flatMap(d => d.questions);
+function go(view) { state.view = view; render(); app.scrollIntoView({ block: "start" }); }
+
+function bar(p, withTicks) {
+  const b = el("div", { class: "bar", role: "img", "aria-label": p + " percent" },
+    el("div", { class: "fill", style: "width:" + p + "%" }));
+  AUDIT.bands.slice(1).forEach(x => b.append(el("div", { class: "tick", style: "left:" + x.min + "%" })));
+  if (!withTicks) return b;
+  const t = el("div", { class: "ticks", "aria-hidden": "true" });
+  AUDIT.bands.forEach(x => t.append(el("span", { style: "left:" + x.min + "%" }, x.name)));
+  return [b, t];
+}
+
+/* ---------- Intro ---------- */
+function renderIntro() {
+  const org = el("input", { id: "org", type: "text", placeholder: "School or organization name", autocomplete: "organization", value: state.ctx.org, oninput: e => state.ctx.org = e.target.value });
+  const role = el("select", { id: "role", onchange: e => state.ctx.role = e.target.value },
+    el("option", { value: "" }, "Choose one"),
+    AUDIT.roles.map(r => el("option", { value: r, selected: state.ctx.role === r }, r)));
+  const win = el("select", { id: "win", onchange: e => state.ctx.win = e.target.value },
+    el("option", { value: "" }, "Choose one"),
+    AUDIT.windows.map(w => el("option", { value: w.v, selected: state.ctx.win === w.v }, w.label)));
+  return el("section", {},
+    el("div", { class: "hero" },
+      el("div", { class: "label" }, AUDIT.kicker + " · " + AUDIT.scenario),
+      el("h1", { html: AUDIT.heroHtml }),
+      el("p", { class: "sub" }, AUDIT.sub),
+      el("ul", { class: "gives" }, AUDIT.gives.map(g => el("li", {}, el("strong", {}, g[0]), el("span", {}, g[1]))))),
+    el("div", { class: "setup" },
+      el("div", { class: "label" }, "Before you begin"),
+      el("div", { class: "row one" }, el("div", { class: "field" }, el("label", { for: "org" }, "Organization"), org)),
+      el("div", { class: "row" },
+        el("div", { class: "field" }, el("label", { for: "role" }, "Your role"), role),
+        el("div", { class: "field" }, el("label", { for: "win" }, AUDIT.windowLabel), win)),
+      el("div", { class: "actions" },
+        el("button", { class: "btn", type: "button", onclick: () => go(0) }, "Begin the audit"),
+        el("span", { class: "meta" }, SECS + " sections · " + TOTAL + " questions · about 10 minutes"))));
+}
+
+/* ---------- Section ---------- */
+function renderSection(i) {
+  const d = AUDIT.domains[i];
+  const count = el("span", {}, answered() + " of " + TOTAL + " answered");
+  const msg = el("div", { class: "msg", role: "alert" });
+  const progress = el("div", { class: "progress" },
+    el("div", { class: "segs", "aria-hidden": "true" }, AUDIT.domains.map((_, k) => el("i", { class: k < i ? "done" : k === i ? "now" : "" }))),
+    el("div", { class: "row" }, el("span", {}, "Section " + (i + 1) + " of " + SECS), count));
+  const scale = el("div", { class: "scale" }, AUDIT.scale.map(s => el("div", {}, el("b", {}, s.label), s.def)));
+  const fieldsets = d.questions.map(q => {
+    const miss = el("div", { class: "miss", hidden: true }, "Choose one to continue.");
+    const opts = el("div", { class: "opts" }, AUDIT.scale.map(s =>
+      el("label", { class: "opt" },
+        el("input", { type: "radio", name: q.id, value: String(s.v), checked: state.a[q.id] === s.v, onchange: () => {
+          state.a[q.id] = s.v; miss.hidden = true; count.textContent = answered() + " of " + TOTAL + " answered"; msg.textContent = "";
+        } }),
+        el("span", {}, s.label))));
+    return el("fieldset", { class: "q", id: "f-" + q.id },
+      el("legend", {}, el("span", { class: "num" }, String(q.n).padStart(2, "0")),
+        el("span", { class: "text" }, q.q, q.w === 3 ? el("span", { class: "impact" }, "High impact") : null)),
+      opts, miss);
+  });
+  const last = i === SECS - 1;
+  const next = el("button", { class: "btn", type: "button", onclick: () => {
+    const open = d.questions.filter(q => state.a[q.id] === undefined);
+    if (open.length) {
+      open.forEach(q => document.querySelector("#f-" + q.id + " .miss").hidden = false);
+      msg.textContent = open.length === 1 ? "One question needs an answer." : open.length + " questions need an answer.";
+      document.getElementById("f-" + open[0].id).scrollIntoView({ block: "center" });
+      return;
+    }
+    go(last ? (state.sent ? "results" : "gate") : i + 1);
+  } }, last ? "See my results" : "Next: " + AUDIT.domains[i + 1].name);
+  const back = el("button", { class: "btn ghost", type: "button", onclick: () => go(i === 0 ? "intro" : i - 1) }, "Back");
+  return el("section", {}, progress,
+    el("div", { class: "sec-head" },
+      el("div", { class: "label" }, "Section " + (i + 1) + " of " + SECS),
+      el("h2", {}, d.name), el("p", { class: "tagline" }, d.tagline), el("p", {}, d.why)),
+    scale, fieldsets, el("div", { class: "nav" }, msg, back, next));
+}
+
+/* ---------- Results ---------- */
+function summaryText() {
+  const o = pctOf(allQs()), b = bandOf(o);
+  const win = AUDIT.windows.find(w => w.v === state.ctx.win);
+  const gaps = topGaps();
+  const L = [];
+  L.push(AUDIT.kicker.toUpperCase() + ": " + AUDIT.scenario);
+  L.push("Organization: " + (state.ctx.org || "Not provided"));
+  if (state.ctx.role) L.push("Role: " + state.ctx.role);
+  if (win) L.push("Timeline: " + win.label);
+  L.push("", "Overall readiness: " + o + "% (" + b.name + ")", "", "By area:");
+  AUDIT.domains.forEach(d => { const p = pctOf(d.questions); L.push("- " + d.name + ": " + p + "% (" + bandOf(p).name + ")"); });
+  L.push("", "Biggest gaps:");
+  gaps.forEach((g, k) => L.push((k + 1) + ". " + g.q.q, "   Next step: " + g.q.fix));
+  L.push("", "Prepared with The Story Desk | " + AUDIT.cta.siteLabel + " | " + AUDIT.cta.email);
+  return L.join("\n");
+}
+function topGaps() {
+  return allQs().map(q => ({ q, d: AUDIT.domains[q.di], gap: (3 - (state.a[q.id] ?? 0)) * q.w }))
+    .filter(g => g.gap > 0).sort((x, y) => y.gap - x.gap || x.q.n - y.q.n).slice(0, 5);
+}
+function flash(btn, text) { const old = btn.dataset.old || btn.textContent; btn.dataset.old = old; btn.textContent = text; setTimeout(() => btn.textContent = old, 2200); }
+
+function renderResults() {
+  const o = pctOf(allQs()), b = bandOf(o);
+  const win = AUDIT.windows.find(w => w.v === state.ctx.win);
+  const scores = AUDIT.domains.map(d => ({ d, p: pctOf(d.questions) }));
+  const hi = Math.max(...scores.map(s => s.p)), lo = Math.min(...scores.map(s => s.p));
+  const gaps = topGaps();
+  const name = state.ctx.org.trim();
+
+  const head = el("div", { class: "res-head" },
+    el("div", { class: "label" }, AUDIT.scenario),
+    el("h1", {}, name ? name + ": readiness results" : "Your readiness results"),
+    el("div", { class: "score" },
+      el("div", { class: "big" }, String(o), el("small", {}, "%")),
+      el("div", { class: "band" }, el("div", { class: "label" }, b.name), el("p", {}, b.text)),
+      el("div", { class: "score-bar" }, bar(o, true))));
+
+  const where = win ? el("div", { class: "panel" }, el("div", { class: "label" }, "Where to start"), el("p", {}, win.note)) : null;
+
+  const rows = el("div", { class: "drows" }, scores.map(s => el("div", { class: "drow" },
+    el("div", { class: "name" }, s.d.name, (s.p === hi && hi !== lo) ? el("span", { class: "strong-flag" }, "Strongest") : null),
+    bar(s.p, false),
+    el("div", { class: "pct" }, s.p + "%", el("em", {}, bandOf(s.p).name)))));
+
+  const gapList = gaps.length
+    ? el("ol", { class: "gaps" }, gaps.map(g => el("li", {},
+        el("div", { class: "dom" }, g.d.name),
+        el("div", { class: "what" }, g.q.q),
+        el("div", { class: "fix" }, el("b", {}, "Next step. "), g.q.fix))))
+    : el("p", { class: "fine" }, "No open gaps. Every item is rated Tested.");
+
+  const ta = el("textarea", { id: "summary", readonly: true, "aria-label": "Results summary" }, summaryText());
+  const copyBtn = el("button", { class: "btn ghost", type: "button", onclick: async () => {
+    try { await navigator.clipboard.writeText(summaryText()); flash(copyBtn, "Copied"); }
+    catch (e) { det.open = true; ta.focus(); ta.select(); flash(copyBtn, "Select and copy below"); }
+  } }, "Copy my results");
+  const mailBtn = el("button", { class: "btn ghost", type: "button", onclick: async () => {
+    try { await navigator.clipboard.writeText(AUDIT.cta.email); flash(mailBtn, "Address copied"); }
+    catch (e) { flash(mailBtn, "Select the address"); }
+  } }, "Copy email address");
+  const det = el("details", {}, el("summary", {}, "Preview the summary"), ta);
+
+  const cta = el("div", { class: "cta" },
+    el("div", { class: "label" }, AUDIT.cta.labelText),
+    el("h2", { html: AUDIT.cta.headHtml }),
+    el("p", {}, AUDIT.cta.body),
+    el("div", { class: "contact" }, el("a", { class: "btn", href: AUDIT.cta.book, target: "_blank", rel: "noopener" }, "Schedule a conversation"), copyBtn, el("span", { class: "addr" }, AUDIT.cta.email)),
+    el("p", {}, state.failed ? "Your results did not reach Clare automatically. Use Copy my results and email them to the address above." : "Clare has your results and will follow up personally. You can also book a time now."),
+    det);
+
+  return el("section", {}, head, where,
+    el("div", { class: "sect-title" }, el("h2", {}, "Readiness by area"), el("p", {}, "Tick marks show where each level begins: " + AUDIT.bands.slice(1).map(x => x.name + " at " + x.min).join(", ") + ".")), rows,
+    el("div", { class: "sect-title" }, el("h2", {}, "Your biggest gaps"), el("p", {}, "Ranked by how much each one would cost you if it stayed open.")), gapList,
+    cta,
+    el("div", { class: "after" },
+      el("button", { class: "btn ghost", type: "button", onclick: () => go(0) }, "Revisit my answers"),
+      el("button", { class: "btn ghost", type: "button", onclick: () => { state.a = {}; state.ctx = { org: "", role: "", win: "" }; state.lead = { name: "", email: "" }; state.sent = false; state.failed = false; go("intro"); } }, "Start over")),
+    el("p", { class: "fine" }, AUDIT.fine));
+}
+
+async function sendLead() {
+  if (!FORM_ENDPOINT || FORM_ENDPOINT.indexOf("PASTE_") === 0) { console.warn("FORM_ENDPOINT is not set"); return false; }
+  const o = pctOf(allQs()), b = bandOf(o);
+  const win = AUDIT.windows.find(w => w.v === state.ctx.win);
+  const payload = {
+    _subject: "Crisis Readiness Audit: " + (state.ctx.org.trim() || state.lead.name.trim()) + " (" + o + "%, " + b.name + ")",
+    name: state.lead.name.trim(),
+    email: state.lead.email.trim(),
+    organization: state.ctx.org.trim(),
+    role: state.ctx.role,
+    situation: win ? win.label : "",
+    overall_score: o + "% (" + b.name + ")",
+    results: summaryText(),
+    source: "crisis-readiness-audit"
+  };
+  try {
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), 8000);
+    const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: ctl.signal });
+    clearTimeout(t);
+    return r.ok;
+  } catch (e) { return false; }
+}
+
+function renderGate() {
+  const nm = el("input", { id: "lead-name", type: "text", autocomplete: "name", value: state.lead.name, oninput: e => state.lead.name = e.target.value });
+  const em = el("input", { id: "lead-email", type: "email", autocomplete: "email", value: state.lead.email, oninput: e => state.lead.email = e.target.value });
+  const msg = el("div", { class: "msg", role: "alert" });
+  const btn = el("button", { class: "btn", type: "submit" }, "See my results");
+  const form = el("form", { class: "setup", novalidate: true, onsubmit: async e => {
+    e.preventDefault();
+    if (!state.lead.name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.lead.email.trim())) { msg.textContent = "Add your name and a valid email address to continue."; return; }
+    msg.textContent = ""; btn.disabled = true; btn.textContent = "Sending…";
+    state.failed = !(await sendLead());
+    state.sent = true;
+    go("results");
+  } },
+    el("div", { class: "row" },
+      el("div", { class: "field" }, el("label", { for: "lead-name" }, "Your name"), nm),
+      el("div", { class: "field" }, el("label", { for: "lead-email" }, "Email address"), em)),
+    el("div", { class: "actions" }, btn, el("span", { class: "meta" }, "Your results go to Clare Venegas at The Story Desk, who may follow up personally.")),
+    msg);
+  return el("section", {},
+    el("div", { class: "sec-head" },
+      el("div", { class: "label" }, "Almost done"),
+      el("h2", {}, "Your results are ready"),
+      el("p", {}, "Enter your name and email to see your score, your five biggest gaps, and a next step for each.")),
+    form,
+    el("div", { class: "nav" }, el("button", { class: "btn ghost", type: "button", onclick: () => go(SECS - 1) }, "Back")));
+}
+
+function render() {
+  app.replaceChildren(state.view === "intro" ? renderIntro() : state.view === "gate" ? renderGate() : state.view === "results" ? renderResults() : renderSection(state.view));
+}
+render();
+</script>
+</body>
+</html>
